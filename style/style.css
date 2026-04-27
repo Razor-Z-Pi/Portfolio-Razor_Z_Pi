@@ -1,0 +1,439 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a1f;
+    color: #f0f0ff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.anime-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.anime-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: brightness(0.65) contrast(1.15) saturate(1.3) blur(1px);
+    transition: transform 0.5s ease;
+    animation: slowZoom 25s infinite alternate;
+}
+
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* градиентная накладка для читаемости */
+.overlay-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(10, 10, 31, 0.55) 0%, #0a0a1f 92%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* частицы на фоне */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* основной контейнер */
+.container {
+    position: relative;
+    z-index: 5;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    gap: 2rem;
+    backdrop-filter: blur(2px);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.badge {
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 2px;
+    color: #ff66cc;
+    background: rgba(255, 102, 204, 0.15);
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(255, 102, 204, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #ff99ff, #c08aff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.typing {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    color: #ccddff;
+    border-right: 3px solid #ff66cc;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.desc {
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 1.2rem 0;
+    color: #c5ceff;
+    line-height: 1.6;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(20, 20, 50, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 100, 200, 0.5);
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff4da6, #b84dff);
+    border: none;
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 25px #ff4da6;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 100, 200, 0.2);
+    border-color: #ff88dd;
+    transform: translateY(-3px);
+}
+
+.hero-avatar {
+    flex: 0 0 260px;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(255, 80, 200, 0.6));
+    animation: float 4.5s infinite ease-in-out;
+}
+
+.hero-avatar img {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 120, 200, 0.8);
+    box-shadow: 0 0 35px rgba(255, 80, 180, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.section {
+    margin: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-family: 'Orbitron', monospace;
+    margin-bottom: 2rem;
+    display: inline-block;
+    border-left: 6px solid #ff66cc;
+    padding-left: 1.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #ff66aa;
+}
+
+/* скиллы сетка */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.3rem;
+}
+
+.skill-card {
+    background: rgba(20, 15, 45, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 100, 200, 0.3);
+    cursor: default;
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    margin-bottom: 0.6rem;
+    color: #ff99dd;
+}
+
+.skill-card span {
+    font-weight: 600;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    background: rgba(80, 40, 120, 0.7);
+    border-color: #ff66cc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* работы - карточки проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(12, 10, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 32px;
+    overflow: hidden;
+    transition: all 0.4s;
+    border: 1px solid rgba(255, 100, 200, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: #ff77cc;
+    box-shadow: 0 25px 35px -12px rgba(255, 80, 200, 0.4);
+}
+
+.project-img {
+    height: 170px;
+    background: linear-gradient(135deg, #2a1b3a, #0e0b22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ffbbee;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffd0ff;
+}
+
+.project-info p {
+    color: #cbcbff;
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.tech-stack span {
+    background: rgba(255, 100, 200, 0.2);
+    border-radius: 30px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* контактная форма */
+.contact-form-area {
+    background: rgba(10, 8, 25, 0.7);
+    backdrop-filter: blur(14px);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 110, 200, 0.4);
+    transition: 0.3s;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    background: rgba(25, 20, 45, 0.8);
+    border: 1px solid #6a4e9e;
+    padding: 0.9rem 1.2rem;
+    border-radius: 2rem;
+    color: white;
+    font-family: inherit;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff66cc;
+    box-shadow: 0 0 12px rgba(255, 102, 204, 0.4);
+}
+
+button[type="submit"] {
+    background: linear-gradient(95deg, #ff3daa, #aa4eff);
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #ff4da6;
+}
+
+.form-message {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 100, 200, 0.2);
+    color: #aaaaff;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .typing {
+        white-space: normal;
+        font-size: 1.2rem;
+        border-right: none;
+        animation: none;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* анимация появления */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card,
+.project-card {
+    animation: fadeUp 0.5s ease backwards;
+}
