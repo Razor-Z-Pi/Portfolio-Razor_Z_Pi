@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Razor_Z_Pi | Портфолио разработчика</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./style/normalize.css">
+        <link rel="stylesheet" href="./style/style.css">
+    </head>
+    <body>
+
+        <div class="anime-bg">
+            <img src="./template.png" alt="anime girl background"
+                onerror="this.src='https://images6.alphacoders.com/133/1336935.jpg';">
+        </div>
+        <div class="overlay-glow"></div>
+        <canvas id="particles-canvas"></canvas>
+
+        <div class="container">
+            <div class="hero">
+                <div class="hero-text">
+                    <div class="badge"><i class="fas fa-code"></i>  Волшебство кода</div>
+                    <h1>Razor_<span style="color:#ff99ff">Z</span>_Pi</h1>
+                    <div class="typing" id="typingEffect"></div>
+                    <p class="desc">Full-Stack разработчик с душой аниме. Создаю эстетичные веб-вселенные, наполненные магией кода, анимациями и интерактивом. Backend & Frontend — моя стихия.</p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-meteor"></i> Проекты</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Связаться</a>
+                    </div>
+                </div>
+                <div class="hero-avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922565.png" alt="anime avatar" 
+                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/1995/1995572.png';">
+                </div>
+            </div>
+
+            <!-- Скиллы -->
+            <div class="section" id="skills">
+                <h2 class="section-title"><i class="fas fa-bolt"></i>Скилы</h2>
+                <div class="skills-grid" id="skillsContainer"></div>
+            </div>
+
+            <!-- Работы / Портфолио -->
+            <div class="section" id="projects">
+                <h2 class="section-title"><i class="fas fa-laptop-code"></i>Работы</h2>
+                <div class="projects-grid" id="projectsContainer"></div>
+            </div>
+
+            <!-- Контактная форма -->
+            <div class="section" id="contact">
+                <h2 class="section-title"><i class="fas fa-comment-dots"></i> Контакт</h2>
+                <div class="contact-form-area">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Ваше сообщение..." required></textarea>
+                        </div>
+                        <button type="submit"><i class="fas fa-feather-alt"></i> Отправить сообщение</button>
+                        <div id="formStatus" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <i class="fas fa-heart" style="color:#ff66cc"></i> 
+                <br><small>Аниме портфолио с магией кода</small>
+            </footer>
+        </div>
+
+        <!-- тост уведомление -->
+        <div id="toastMsg" class="toast-notify"><i class="fas fa-star-of-life"></i> </div>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>

@@ -161,6 +161,7 @@ body {
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 100, 200, 0.5);
     color: white;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -210,6 +211,7 @@ body {
     }
 }
 
+/* секции */
 .section {
     margin: 5rem 0;
 }
@@ -384,6 +386,28 @@ button[type="submit"]:hover {
     text-align: center;
     font-size: 0.95rem;
     font-weight: 500;
+}
+
+/* тост уведомление */
+.toast-notify {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-left: 4px solid #ff66cc;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+    z-index: 1000;
+    font-weight: 500;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.3);
+}
+
+.toast-notify.show {
+    transform: translateX(0);
 }
 
 footer {
