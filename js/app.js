@@ -9,7 +9,7 @@ const skillsData = [
     { name: "Three.js", icon: "fas fa-cube" },
     { name: "Git & CI/CD", icon: "fab fa-git-alt" },
     { name: "Figma → Code", icon: "fab fa-figma" },
-    { name: "PHP (базово)", icon: "fab fa-php" },
+    { name: "PHP", icon: "fab fa-php" },
     { name: "Python", icon: "fab fa-python" }
 ];
 
@@ -52,7 +52,7 @@ const projectsData = [
     }
 ];
 
-// Рендер скиллов (jQuery)
+// Рендер скиллов
 $(document).ready(function () {
     const skillsContainer = $('#skillsContainer');
     skillsData.forEach((skill, idx) => {
@@ -80,24 +80,32 @@ $(document).ready(function () {
         projectsContainer.append(card);
     });
 
-    // Эффект печатающего текста на чистом JS + переключение
     const typingElement = document.getElementById('typingEffect');
     const roles = [
-        "Full-Stack",
-        "jQuery ",
-        "UI/UX ",
+        "Full-Stack разработка",
+        "Descktop-разработка",
+        "Аналитика",
+        "Графика и фото",
+        "UI/UX",
     ];
     let roleIndex = 0, charIndex = 0;
     let isDeleting = false;
 
     function typeEffect() {
+        if (typingElement.style.width === '' || typingElement.innerHTML.length === 0) {
+            typingElement.style.width = 'auto';
+            const maxWidth = Math.max(...roles.map(r => r.length)) * 12 + 20;
+            typingElement.style.width = maxWidth + 'px';
+        }
+
         const currentRole = roles[roleIndex];
+
         if (!isDeleting) {
             typingElement.innerHTML = currentRole.substring(0, charIndex + 1);
             charIndex++;
             if (charIndex === currentRole.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 2000);
+                setTimeout(typeEffect, 3000);
                 return;
             }
         } else {
@@ -114,7 +122,7 @@ $(document).ready(function () {
     }
     typeEffect();
 
-    // ----- Обработка контактной формы с анимацией и сохранением в localStorage (демо)-----
+    // ----- Обработка контактной формы с анимацией и сохранением в localStorage-----
     $('#contactForm').on('submit', function (e) {
         e.preventDefault();
         const name = $('#name').val().trim();
@@ -122,7 +130,7 @@ $(document).ready(function () {
         const message = $('#message').val().trim();
 
         if (!name || !email || !message) {
-            showToast('Пожалуйста, заполните все поля!', 'error');
+            showToast('Пожалуйста, заполните все поля!!!', 'error');
             $('#formStatus').html('<span style="color:#ffaaaa;"><i class="fas fa-exclamation-triangle"></i> Все поля обязательны!</span>');
             setTimeout(() => $('#formStatus').html(''), 3000);
             return;
@@ -178,7 +186,6 @@ $(document).ready(function () {
         }
     });
 
-    // --- Частицы на фоне с использованием Canvas (оставляем старый код) ---
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
     let width = window.innerWidth;
@@ -237,11 +244,7 @@ $(document).ready(function () {
     initParticles(140);
     animateParticles();
 
-    // Дополнительная интерактивность: эффект при наведении на карточки проектов (звуковая иллюзия - нет звука, просто вибрация)
     $('.project-card').on('mouseenter', function () {
         $(this).css('transition', 'all 0.2s');
     });
-
-    // Анимация загрузки
-    console.log('ヽ(✿ﾟ▽ﾟ)ノ Аниме портфолио загружено с jQuery эффектами!');
 });

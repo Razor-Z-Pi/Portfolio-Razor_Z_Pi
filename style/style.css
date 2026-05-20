@@ -51,7 +51,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(10, 10, 31, 0.55) 0%, #0a0a1f 92%);
+    background: radial-gradient(circle at 70% 50%, rgba(10, 10, 31, 0.55) 0%, #0a0a1f 92%);
     z-index: -1;
     pointer-events: none;
 }
@@ -93,7 +93,7 @@ body {
 .badge {
     font-family: 'Orbitron', monospace;
     letter-spacing: 2px;
-    color: #ff66cc;
+    color: #ffa366;
     background: rgba(255, 102, 204, 0.15);
     display: inline-block;
     padding: 0.4rem 1.2rem;
@@ -107,7 +107,7 @@ body {
 .hero-text h1 {
     font-size: 4rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #fff, #ff99ff, #c08aff);
+    background: linear-gradient(135deg, #fff, #ffc299, #8adeff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -116,12 +116,16 @@ body {
 }
 
 .typing {
+    display: inline-block;
+
     font-size: 1.7rem;
     font-weight: 500;
-    margin: 1rem 0;
+
+    margin: 20px 0;
+    border-right: 3px solid #ffdb66;
+
     color: #ccddff;
-    border-right: 3px solid #ff66cc;
-    display: inline-block;
+
     white-space: nowrap;
     overflow: hidden;
     animation: blinkCursor 0.7s step-end infinite;
@@ -165,26 +169,26 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #ff4da6, #b84dff);
+    background: linear-gradient(45deg, #ffac4d, #ffa34d);
     border: none;
     box-shadow: 0 0 15px rgba(255, 77, 166, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 0 25px #ff4da6;
+    box-shadow: 0 0 25px #4dafff;
 }
 
 .btn-outline:hover {
     background: rgba(255, 100, 200, 0.2);
-    border-color: #ff88dd;
+    border-color: #ffc188;
     transform: translateY(-3px);
 }
 
 .hero-avatar {
     flex: 0 0 260px;
     text-align: center;
-    filter: drop-shadow(0 0 20px rgba(255, 80, 200, 0.6));
+    filter: drop-shadow(0 0 20px rgba(255, 185, 80, 0.6));
     animation: float 4.5s infinite ease-in-out;
 }
 
@@ -221,10 +225,10 @@ body {
     font-family: 'Orbitron', monospace;
     margin-bottom: 2rem;
     display: inline-block;
-    border-left: 6px solid #ff66cc;
+    border-left: 6px solid #ff8a66;
     padding-left: 1.2rem;
     letter-spacing: 2px;
-    text-shadow: 0 0 5px #ff66aa;
+    text-shadow: 0 0 5px #668aff;
 }
 
 /* скиллы сетка */
@@ -241,14 +245,14 @@ body {
     padding: 1.2rem 0.8rem;
     text-align: center;
     transition: all 0.25s ease;
-    border: 1px solid rgba(255, 100, 200, 0.3);
+    border: 1px solid rgba(255, 188, 100, 0.3);
     cursor: default;
 }
 
 .skill-card i {
     font-size: 2.5rem;
     margin-bottom: 0.6rem;
-    color: #ff99dd;
+    color: #ffec99;
 }
 
 .skill-card span {
@@ -259,8 +263,8 @@ body {
 
 .skill-card:hover {
     transform: translateY(-6px);
-    background: rgba(80, 40, 120, 0.7);
-    border-color: #ff66cc;
+    background: rgba(40, 77, 120, 0.7);
+    border-color: #ffb066;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -283,7 +287,7 @@ body {
 
 .project-card:hover {
     transform: translateY(-12px) scale(1.02);
-    border-color: #ff77cc;
+    border-color: #ffc077;
     box-shadow: 0 25px 35px -12px rgba(255, 80, 200, 0.4);
 }
 
@@ -294,7 +298,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 4rem;
-    color: #ffbbee;
+    color: #ffd4bb;
 }
 
 .project-info {
@@ -304,7 +308,7 @@ body {
 .project-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #ffd0ff;
+    color: #fff2d0;
 }
 
 .project-info p {
@@ -336,7 +340,7 @@ body {
     backdrop-filter: blur(14px);
     border-radius: 2rem;
     padding: 2.5rem;
-    border: 1px solid rgba(255, 110, 200, 0.4);
+    border: 1px solid rgba(255, 151, 110, 0.4);
     transition: 0.3s;
 }
 
@@ -348,7 +352,7 @@ input,
 textarea {
     width: 100%;
     background: rgba(25, 20, 45, 0.8);
-    border: 1px solid #6a4e9e;
+    border: 1px solid #9e8b4e;
     padding: 0.9rem 1.2rem;
     border-radius: 2rem;
     color: white;
@@ -360,12 +364,12 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: #ff66cc;
+    border-color: #ffa366;
     box-shadow: 0 0 12px rgba(255, 102, 204, 0.4);
 }
 
 button[type="submit"] {
-    background: linear-gradient(95deg, #ff3daa, #aa4eff);
+    background: linear-gradient(95deg, #3d81ff, #ff9e4e);
     border: none;
     padding: 0.9rem 2.2rem;
     border-radius: 3rem;
